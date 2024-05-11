@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 <body>
@@ -40,7 +41,7 @@
 <section class="teacher">
 
     <div class="box">
-        <img src="images/teacher-1.png" alt="">
+        <img src="{% static 'images/teacher-1.png' %}" alt="">
         <h3>john deo</h3>
         <span>teacher</span>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, nobis.</p>
@@ -53,7 +54,7 @@
     </div>
 
     <div class="box">
-        <img src="images/teacher-2.png" alt="">
+        <img src="{% static 'images/teacher-2.png' %}" alt="">
         <h3>john deo</h3>
         <span>teacher</span>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, nobis.</p>
@@ -66,7 +67,7 @@
     </div>
 
     <div class="box">
-        <img src="images/teacher-3.png" alt="">
+        <img src="{% static 'images/teacher-3.png' %}" alt="">
         <h3>john deo</h3>
         <span>teacher</span>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, nobis.</p>
@@ -79,7 +80,7 @@
     </div>
 
     <div class="box">
-        <img src="images/teacher-4.png" alt="">
+        <img src="{% static 'images/teacher-4.png' %}" alt="">
         <h3>john deo</h3>
         <span>teacher</span>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, nobis.</p>
@@ -152,7 +153,7 @@
 
 
 <!-- custom js file link -->
-<script src="js/script.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>

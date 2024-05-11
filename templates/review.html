@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 <body>
@@ -42,7 +43,7 @@
     <div class="box">
         <div class="student">
             <div class="student-info">
-                <img src="images/student-1.png" alt="">
+                <img src="{% static 'images/student-1.png' %}" alt="">
                 <div class="info">
                     <h3>john deo</h3>
                     <span>student</span>
@@ -56,7 +57,7 @@
     <div class="box">
         <div class="student">
             <div class="student-info">
-                <img src="images/student-2.png" alt="">
+                <img src="{% static 'images/student-2.png' %}" alt="">
                 <div class="info">
                     <h3>john deo</h3>
                     <span>student</span>
@@ -70,7 +71,7 @@
     <div class="box">
         <div class="student">
             <div class="student-info">
-                <img src="images/student-3.png" alt="">
+                <img src="{% static 'images/student-3.png' %}" alt="">
                 <div class="info">
                     <h3>john deo</h3>
                     <span>student</span>
@@ -84,7 +85,7 @@
     <div class="box">
         <div class="student">
             <div class="student-info">
-                <img src="images/student-4.png" alt="">
+                <img src="{% static 'images/student-4.png' %}" alt="">
                 <div class="info">
                     <h3>john deo</h3>
                     <span>student</span>
@@ -98,7 +99,7 @@
     <div class="box">
         <div class="student">
             <div class="student-info">
-                <img src="images/student-5.png" alt="">
+                <img src="{% static 'images/student-5.png' %}" alt="">
                 <div class="info">
                     <h3>john deo</h3>
                     <span>student</span>
@@ -112,7 +113,7 @@
     <div class="box">
         <div class="student">
             <div class="student-info">
-                <img src="images/student-6.png" alt="">
+                <img src="{% static 'images/student-6.png' %}" alt="">
                 <div class="info">
                     <h3>john deo</h3>
                     <span>student</span>
@@ -184,7 +185,7 @@
 
 
 <!-- custom js file link -->
-<script src="js/script.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>
