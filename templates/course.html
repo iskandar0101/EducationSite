@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
+{% block content %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,195 +20,36 @@
     
 <div class="container">
 
-<header>
 
-    <a href="#" class="logo">Smart<span>Study</span></a>
-
-    <div id="menu" class="fas fa-bars"></div>
-
-    <nav class="navbar">
-        <a href="home.html">home</a>
-        <a href="course.html">course</a>
-        <a href="teacher.html">teacher</a>
-        <a href="price.html">price</a>
-        <a href="review.html">review</a>
-        <a href="contact.html">contact</a>
-    </nav>
-
-</header>
 
 <h1 class="heading"> popular courses </h1>
 
 <!-- course section  -->
 
 <section class="course">
-
-    <div class="box">
-        <span class="amount">$59.99</span>
-        <img src="{% static 'images/course-1.svg' %}" alt="">
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
+    {% for i in course_objects %}
+        <div class="box">
+            <span class="amount">{{ i.price }}</span>
+            <img src="{{ i.photo.url }}" alt="">
+            <div class="stars">
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <h3>{{ i.name }}</h3>
+            </div>
+            <p>{{ i.about }}</p>
+            <a href="#" class="btn">learn more</a>
+            <div class="icons">
+                <p> <i class="far fa-clock"></i> {{ i.created_time }}</p>
+                <p> <i class="far fa-calendar"></i> {{ i.duration }} </p>
+                <p> <i class="fas fa-book"></i> {{ i.modules }} </p>
+            </div>
         </div>
-        <h3>front end development</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque ullam omnis odit accusamus doloremque? Cum aliquid unde nulla. Vitae, adipisci?</p>
-        <a href="#" class="btn">learn more</a>
-        <div class="icons">
-            <p> <i class="far fa-clock"></i> 2 hours </p>
-            <p> <i class="far fa-calendar"></i> 6 months </p>
-            <p> <i class="fas fa-book"></i> 12 modules </p>
-        </div>
-    </div>
-
-    <div class="box">
-        <span class="amount">$59.99</span>
-        <img src="{% static 'images/course-2.svg' %}" alt="">
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-        </div>
-        <h3>front end development</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque ullam omnis odit accusamus doloremque? Cum aliquid unde nulla. Vitae, adipisci?</p>
-        <a href="#" class="btn">learn more</a>
-        <div class="icons">
-            <p> <i class="far fa-clock"></i> 2 hours </p>
-            <p> <i class="far fa-calendar"></i> 6 months </p>
-            <p> <i class="fas fa-book"></i> 12 modules </p>
-        </div>
-    </div>
-
-    <div class="box">
-        <span class="amount">$59.99</span>
-        <img src="{% static 'images/course-3.svg' %}" alt="">
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-        </div>
-        <h3>front end development</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque ullam omnis odit accusamus doloremque? Cum aliquid unde nulla. Vitae, adipisci?</p>
-        <a href="#" class="btn">learn more</a>
-        <div class="icons">
-            <p> <i class="far fa-clock"></i> 2 hours </p>
-            <p> <i class="far fa-calendar"></i> 6 months </p>
-            <p> <i class="fas fa-book"></i> 12 modules </p>
-        </div>
-    </div>
-
-    <div class="box">
-        <span class="amount">$59.99</span>
-        <img src="{% static 'images/course-4.svg' %}" alt="">
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-        </div>
-        <h3>front end development</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque ullam omnis odit accusamus doloremque? Cum aliquid unde nulla. Vitae, adipisci?</p>
-        <a href="#" class="btn">learn more</a>
-        <div class="icons">
-            <p> <i class="far fa-clock"></i> 2 hours </p>
-            <p> <i class="far fa-calendar"></i> 6 months </p>
-            <p> <i class="fas fa-book"></i> 12 modules </p>
-        </div>
-    </div>
-
-    <div class="box">
-        <span class="amount">$59.99</span>
-        <img src="{% static 'images/course-5.svg' %}" alt="">
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-        </div>
-        <h3>front end development</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque ullam omnis odit accusamus doloremque? Cum aliquid unde nulla. Vitae, adipisci?</p>
-        <a href="#" class="btn">learn more</a>
-        <div class="icons">
-            <p> <i class="far fa-clock"></i> 2 hours </p>
-            <p> <i class="far fa-calendar"></i> 6 months </p>
-            <p> <i class="fas fa-book"></i> 12 modules </p>
-        </div>
-    </div>
-
-    <div class="box">
-        <span class="amount">$59.99</span>
-        <img src="{% static 'images/course-6.svg' %}" alt="">
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-        </div>
-        <h3>front end development</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque ullam omnis odit accusamus doloremque? Cum aliquid unde nulla. Vitae, adipisci?</p>
-        <a href="#" class="btn">learn more</a>
-        <div class="icons">
-            <p> <i class="far fa-clock"></i> 2 hours </p>
-            <p> <i class="far fa-calendar"></i> 6 months </p>
-            <p> <i class="fas fa-book"></i> 12 modules </p>
-        </div>
-    </div>
-
+    {% endfor %}
 </section>
 
-
-<!-- footer section  -->
-
-<section class="footer">
-
-    <div class="box-container">
-
-        <div class="box">
-            <h3>about us</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, maxime!</p>
-        </div>
-
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="#">home</a>
-            <a href="#">course</a>
-            <a href="#">teacher</a>
-            <a href="#">price</a>
-            <a href="#">review</a>
-            <a href="#">contact</a>
-        </div>
-
-        <div class="box">
-            <h3>follow us</h3>
-            <a href="#">facebook</a>
-            <a href="#">twitter</a>
-            <a href="#">instagram</a>
-            <a href="#">linkedin</a>
-        </div>
-
-        <div class="box">
-            <h3>contact us</h3>
-           <p> <i class="fas fa-phone"></i> +123-456-7890 </p>
-           <p> <i class="fas fa-envelope"></i> studysmart@gmail.com </p>
-           <p> <i class="fas fa-map-marker-alt"></i> mumbai, india - 400104 </p>
-        </div>
-
-    </div>
-
-    <div class="credit"> created by <span> mr. web designer </span> | all rights reserved </div>
-
-</section>
-
-</div>
 
 
 
@@ -226,3 +70,4 @@
 
 </body>
 </html>
+{% endblock content %}

@@ -1,0 +1,65 @@
+{% load static %}
+<header>
+
+    <a href="{% url 'home' %}" class="logo">Smart<span>Study</span></a>
+
+    <div id="menu" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <a href="{% url 'home' %}">home</a>
+        <a href="{% url 'course' %}">course</a>
+        <a href="{% url 'teacher' %}">teacher</a>
+        <a href="{% url 'price' %}">price</a>
+        <a href="{% url 'review' %}">review</a>
+        <a href="{% url 'contact' %}">contact</a>
+    </nav>
+
+</header>
+
+{% block content %}
+ 
+{% endblock content %}
+
+<!-- footer section  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>about us</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, maxime!</p>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="{% url 'home' %}">home</a>
+            <a href="{% url 'course' %}">course</a>
+            <a href="{% url 'teacher' %}">teacher</a>
+            <a href="{% url 'price' %}">price</a>
+            <a href="{% url 'review' %}">review</a>
+            <a href="{% url 'contact' %}">contact</a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://www.facebook.com/">facebook</a>
+            <a href="https://www.twitter.com/">twitter</a>
+            <a href="https://www.instagram.com/roi_iskandar_/">instagram</a>
+            <a href="#">linkedin</a>
+        </div>
+
+        <div class="box">
+            <h3>contact us</h3>
+           <p> <i class="fas fa-phone"></i> +998 93 772 41 54 </p>
+           <p> <i class="fas fa-envelope"></i> iskandarjuraqulov15@gmail.com </p>
+           <p> <i class="fas fa-map-marker-alt"></i> Samarqand, Uzbekistan - 400104 </p>
+        </div>
+
+    </div>
+
+    <div class="credit"> created by <span> mr. web designer </span> | all rights reserved </div>
+
+</section>
+
+</div>
