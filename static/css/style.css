@@ -252,7 +252,7 @@ header .navbar a:hover{
 }
 
 .course-info strong {
-  color: #333;
+  color: #09fff7;
 }
 
 /* Responsive design for smaller screens */
@@ -264,6 +264,9 @@ header .navbar a:hover{
 
   .course-image {
       flex: 1;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .course-info {
