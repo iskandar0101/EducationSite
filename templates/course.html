@@ -7,12 +7,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>course</title>
+    <title>KURSLAR</title>
 
-    <!-- font awesome cdn link  -->
+    <!-- Font Awesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <!-- custom css file link  -->
+    <!-- Custom CSS File Link -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
@@ -20,12 +20,9 @@
     
 <div class="container">
 
+<h1 class="heading">MASHXUR KURSLAR</h1>
 
-
-<h1 class="heading"> popular courses </h1>
-
-<!-- course section  -->
-
+<!-- Course Section -->
 <section class="course">
     {% for i in course_objects %}
         <div class="box">
@@ -40,34 +37,19 @@
                 <h3>{{ i.name }}</h3>
             </div>
             <p>{{ i.about }}</p>
-            <a href="#" class="btn">learn more</a>
+            <a href="{% url 'course_detail' i.pk %}" class="btn">Kurs haqida ko'proq</a>
             <div class="icons">
-                <p> <i class="far fa-clock"></i> {{ i.created_time }}</p>
-                <p> <i class="far fa-calendar"></i> {{ i.duration }} </p>
-                <p> <i class="fas fa-book"></i> {{ i.modules }} </p>
+                <p><i class="far fa-clock"></i> {{ i.created_time }}</p>
+                <p><i class="far fa-calendar"></i> {{ i.duration }}</p>
+                <p><i class="fas fa-book"></i> {{ i.modules }}</p>
             </div>
         </div>
     {% endfor %}
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- custom js file link -->
+<!-- Custom JS File Link -->
 <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>
-{% endblock content %}
+{% endblock %}

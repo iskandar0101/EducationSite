@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ course.name }}</title>
+
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Custom CSS File Link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="container course-detail-container">
+    <h1 class="heading">{{ course.name }}</h1>
+
+    <div class="course-detail">
+        <div class="course-image">
+            <img id="courseImage" src="{{ course.photo.url }}" alt="{{ course.name }}">
+        </div>
+        <div class="course-info">
+            <p><strong>Price:</strong> {{ course.price }}</p>
+            <p><strong>About:</strong> {{ course.about }}</p>
+            <p><strong>Created Time:</strong> {{ course.created_time|date:"F d, Y" }}</p>
+            <p><strong>Duration:</strong> {{ course.duration }}</p>
+            <p><strong>Modules:</strong> {{ course.modules }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Custom JS File Link -->
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+{% endblock %}

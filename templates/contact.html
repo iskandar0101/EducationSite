@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact</title>
+    <title>KONTAKT</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -21,7 +21,7 @@
 <div class="container">
 
 
-<h1 class="heading">contact us</h1>
+<h1 class="heading">BIZ BILAN BOG'LANING</h1>
 
 <!-- contact section  -->
 
@@ -31,18 +31,12 @@
     <img src="{% static 'images/contact-img.svg'' %}" alt="">
 </div>
 
-<form action="">
+<form action="" method = 'POST' >
 
-    <div class="inputBox">
-        <input type="text" placeholder="name">
-        <input type="email" placeholder="email">
-    </div>
+    {% csrf_token %}
+    {{form.as_p}}
 
-    <input type="text" placeholder="subject" class="box">
-
-    <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
-
-    <input type="submit" class="btn" value="send">
+    <input type="submit" class="btn" value="Yuborish">
 
 </form>
 

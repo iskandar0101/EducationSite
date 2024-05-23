@@ -10,3 +10,21 @@ window.onscroll = () =>{
   menu.classList.remove('fa-times');
   navbar.classList.remove('active');
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const courseImage = document.getElementById('courseImage');
+
+  courseImage.addEventListener('click', function() {
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    document.body.appendChild(lightbox);
+
+    const img = document.createElement('img');
+    img.src = courseImage.src;
+    lightbox.appendChild(img);
+
+    lightbox.addEventListener('click', function() {
+      lightbox.remove();
+    });
+  });
+});

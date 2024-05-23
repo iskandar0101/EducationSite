@@ -214,6 +214,82 @@ header .navbar a:hover{
   padding-right: .4rem;
   color:var(--pink);
 }
+/* General container styling */
+.course-detail-container {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Course detail layout */
+.course-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.course-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Course information styling */
+.course-info {
+  width: 100%;
+  text-align: left;
+}
+
+.course-info p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.course-info strong {
+  color: #333;
+}
+
+/* Responsive design for smaller screens */
+@media (min-width: 768px) {
+  .course-detail {
+      flex-direction: row;
+      align-items: flex-start;
+  }
+
+  .course-image {
+      flex: 1;
+  }
+
+  .course-info {
+      flex: 2;
+      padding-left: 2rem;
+  }
+}
+/* Add to your style.css */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
 
 .teacher{
   display: flex;
@@ -424,6 +500,197 @@ header .navbar a:hover{
   resize: none;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+  --violet: #6c5ce7;
+  --pink: #FC427B;
+  --gradient: linear-gradient(90deg, var(--violet), var(--pink));
+}
+
+* {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s ease-out;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #333;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5rem;
+}
+
+body {
+  background: var(--gradient);
+  padding: 3rem 7%;
+}
+
+section {
+  padding: 2rem 7%;
+}
+
+.container {
+  background: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+}
+
+.heading {
+  color: transparent;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding: 0 1rem;
+  padding-top: 2.5rem;
+  text-align: center;
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .8rem 3rem;
+  border-radius: .5rem;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.btn:hover {
+  background: var(--gradient);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 7%;
+  border-bottom: .1rem solid rgba(0, 0, 0, .1);
+  position: relative;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+header .logo span {
+  color: var(--pink);
+}
+
+header .navbar a {
+  margin-left: 2rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+header .navbar a:hover {
+  color: var(--pink);
+}
+
+#menu {
+  font-size: 2.5rem;
+  padding: .5rem 1rem;
+  border-radius: .3rem;
+  border: .1rem solid rgba(0, 0, 0, .2);
+  cursor: pointer;
+  display: none;
+}
+
+.course-detail-container {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.course-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.course-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.course-info {
+  width: 100%;
+  text-align: left;
+}
+
+.course-info p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.course-info strong {
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  .course-detail {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .course-image {
+    flex: 1;
+  }
+
+  .course-info {
+    flex: 2;
+    padding-left: 2rem;
+  }
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
 
 
 
@@ -560,3 +827,4 @@ header .navbar a:hover{
   }
 
 } 
+

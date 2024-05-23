@@ -1,5 +1,8 @@
 from django.db import models
 
+
+
+########################################
 class CoursePost(models.Model):
     name = models.CharField(max_length=70, verbose_name='Kurs nomi')
     about = models.TextField(verbose_name='Kurs haqida')
@@ -19,7 +22,7 @@ class CoursePost(models.Model):
         verbose_name_plural = 'Kurs'
     
     
-    
+ ########################################   
 class TeachersPost(models.Model):
     name = models.CharField( max_length=70, verbose_name='Ustozning ismi')
     photo = models.ImageField( upload_to='media/', verbose_name='Ustozning rasmi' )
@@ -38,7 +41,7 @@ class TeachersPost(models.Model):
         verbose_name_plural = 'Ustoz Haqida Posts'
         
         
-        
+#####################################    
 class ReviewPost(models.Model):
     name = models.CharField( max_length=70, verbose_name='Izoh qoldiruvchining ismi')
     photo = models.ImageField( upload_to='media/', verbose_name='Izoh Rasmi')
@@ -54,3 +57,47 @@ class ReviewPost(models.Model):
         managed = True
         verbose_name = 'Izoh '
         verbose_name_plural = 'Izohlar'
+        
+       
+###################################
+class ContactPage(models.Model):
+    name = models.CharField( max_length=200)
+    email = models.EmailField( max_length=254)
+    subject = models.CharField( max_length=50)
+    message = models.TextField()
+
+
+    def __str__(self):
+        return self.name
+    
+    
+    class Meta:
+        db_table = 'Contact_Page'
+        managed = True
+        verbose_name = 'Contact'
+        verbose_name_plural = 'Contacts'
+
+
+
+###############################################
+class Plan(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    duration = models.CharField(max_length=50, default="month")
+    certificates = models.BooleanField(default=True)
+    full_courses = models.BooleanField(default=True)
+    full_modules = models.BooleanField(default=True)
+    live_projects = models.BooleanField(default=True)
+    support = models.CharField(max_length=100, default="24 x 7 supports")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'Plan'
+        managed = True
+        verbose_name = 'Plan'
+        verbose_name_plural = 'Plans'
+
+
+   
