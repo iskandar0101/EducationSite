@@ -1,72 +1,57 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharh</title>
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-</head>
-<body>
     
 <div class="container">
+    <h1 class="heading">Talabalar sharhi</h1>
 
+    <!-- Review form -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ review_form.as_p }}
+        <button type="submit" name="submit_review" class="btn btn-primary">Submit Review</button>
+    </form>
 
-
-<h1 class="heading"> Talabalar sharhi </h1>
-
-<!-- review section  -->
-
-<section class="review">
-
-    {% for i in review_objects %}
-        
-        
-        <div class="box">
-            <div class="student">
-                <div class="student-info">
-                    <img src="{{ i.photo.url }}" alt="">
-                    <div class="info">
-                        <h3>{{i.name}}</h3>
-                        <span>{{i.level}}</span>
+    <!-- Review section -->
+    <section class="review">
+        {% for review in review_objects %}
+            <div class="box">
+                <div class="student">
+                    <div class="student-info">
+                        <img src="{{ review.photo.url }}" alt="">
+                        <div class="info">
+                            <h3>{{ review.name }}</h3>
+                            <span>{{ review.level }}</span>
+                        </div>
                     </div>
+                    <i class="fas fa-quote-right"></i>
                 </div>
-                <i class="fas fa-quote-right"></i>
+                <p class="text">{{ review.about }}</p>
+
+                <!-- Comments for each review -->
+                <div class="comments">
+                    <h4>Comments</h4>
+                    {% for comment in review.comments.all %}
+                        <div class="comment">
+                            <p>{{ comment.text }}</p>
+                            <small>by {{ comment.user.username }} on {{ comment.created_at }}</small>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Comment form for each review -->
+                <form method="post" action="{% url 'review' %}">
+                    {% csrf_token %}
+                    {{ comment_form.as_p }}
+                    <input type="hidden" name="review_id" value="{{ review.id }}">
+                    <button type="submit" name="submit_comment" class="btn btn-primary">Submit Comment</button>
+                </form>
             </div>
-            <p class="text">{{i.about}}</p>
-        </div>
-
-
-    {% endfor %}
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        {% endfor %}
+    </section>
+</div>
 
 <!-- custom js file link -->
 <script src="{% static 'js/script.js' %}"></script>
 
-</body>
-</html>
 {% endblock content %}

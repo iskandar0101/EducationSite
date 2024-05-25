@@ -1,5 +1,5 @@
 from django import forms
-from .models import ContactPage
+from .models import ContactPage , Comment , ReviewPost
 
 class ContactPageForm(forms.ModelForm):
     class Meta:
@@ -31,4 +31,31 @@ class ContactPageForm(forms.ModelForm):
             'message': {
                 'required': 'Iltimos xabarni kiriting.',
             },
+        }
+
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']
+        widgets = {
+            'text': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Write your comment here...', 'rows': 4}),
+        }
+        
+
+
+
+
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = ReviewPost
+        fields = ['name', 'level', 'photo', 'about']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your name'}),
+            'level': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your level'}),
+            'photo': forms.FileInput(attrs={'class': 'form-control'}),
+            'about': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Write your review here...', 'rows': 4}),
         }

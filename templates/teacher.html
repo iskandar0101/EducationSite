@@ -1,55 +1,42 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
 {% load static %}
-{% block content %}
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O'QITUVCHILAR</title>
+    <title>Tajribli O'qituvchilar</title>
 
-    <!-- font awesome cdn link  -->
+    <!-- Font Awesome CDN link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <!-- custom css file link  -->
+    <!-- Custom CSS file link -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
 </head>
 <body>
-    
 <div class="container">
+    <h1 class="heading">Tajribli O'qituvchilar</h1>
 
-
-
-<h1 class="heading"> TAJRIBLI O'QITUVCHILAR </h1>
-
-<!-- teacher section  -->
-<section class="teacher">
-
-    
-    {% for i in teacher_objects %}
-        <div class="box">
-            <img src="{{ i.photo.url }}" alt="">
-            <h3>{{ i.name }}</h3>
-            <span>{{ i.level }}</span>
-            <p>{{ i.about }}</p>
-            <div class="share">
-                <a href="https://ru-ru.facebook.com/" class="fab fa-facebook-f"></a>
-                <a href="https://x.com/?lang=ru" class="fab fa-twitter"></a>
-                <a href="https://www.instagram.com/roi_iskandar_/" class="fab fa-instagram"></a>
-                <a href="https://t.me/Iska_04" class="fab fa-telegram"></a>
+    <!-- Teacher section -->
+    <section class="teacher">
+        {% for teacher in teacher_objects %}
+            <div class="box">
+                <img src="{{ teacher.photo.url }}" alt="{{ teacher.name }}">
+                <h3>{{ teacher.name }}</h3>
+                <span>{{ teacher.level }}</span>
+                <p>{{ teacher.about }}</p>
+                <div class="share">
+                    <a href="https://ru-ru.facebook.com/" class="fab fa-facebook-f"></a>
+                    <a href="https://x.com/?lang=ru" class="fab fa-twitter"></a>
+                    <a href="https://www.instagram.com/roi_iskandar_/" class="fab fa-instagram"></a>
+                    <a href="https://t.me/Iska_04" class="fab fa-telegram"></a>
+                </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </section>
+</div>
 
-
-</section>
-
-
-<!-- custom js file link -->
+<!-- Custom JavaScript file link -->
 <script src="{% static 'js/script.js' %}"></script>
-
 </body>
 </html>
-{% endblock content %}
